@@ -1,18 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Button } from 'semantic-ui-react';
+import React from "react";
+import "./App.css";
+import ButtonPage from "./button_page";
+import LoginPage from "./login_page";
+import MainPage from "./main_page";
+import SignupPage from "./signup_page";
+import { Route, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button primary>Learn React</Button>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Route exact path="/" component={LoginPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/button" component={ButtonPage} />
+        <Route path="/main" component={MainPage} />
+        <Route path="/signup" component={SignupPage} />
+      </BrowserRouter>
     </div>
   );
 }
